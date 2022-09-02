@@ -8842,23 +8842,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Martin\\.nuget\\packages\\": {},
+    "C:\\Users\\DoloresM\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\ProjectPlanningApp\\ProjectPlanningApp.csproj",
+      "projectUniqueName": "C:\\Projects\\ProjectPlanningApp\\ProjectPlanningApp.csproj",
       "projectName": "ProjectPlanningApp",
-      "projectPath": "D:\\Projects\\ProjectPlanningApp\\ProjectPlanningApp.csproj",
-      "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\ProjectPlanningApp\\obj\\",
+      "projectPath": "C:\\Projects\\ProjectPlanningApp\\ProjectPlanningApp.csproj",
+      "packagesPath": "C:\\Users\\DoloresM\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\ProjectPlanningApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DoloresM\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
