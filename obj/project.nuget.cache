@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "K3rsfFpn+Nr+QfDcl2xHzyprpWYl2MYCV6VfAVXMtdp0/zFHDrmHyJnSfaFUldwtyccx4sRsR4fn6YxxPd/17Q==",
+  "dgSpecHash": "1CVJfre/yN9t3IEVBiQHE/3ibLWSEIJQE78eV9k0Pf1aKEhN+9LBZv3l7KkIC/0aOJAyxQS9qVwm1PELD9ZcaA==",
   "success": true,
   "projectFilePath": "C:\\Projects\\ProjectPlanningApp\\ProjectPlanningApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\DoloresM\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\DoloresM\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.25\\microsoft.aspnetcore.cryptography.internal.3.1.25.nupkg.sha512",
     "C:\\Users\\DoloresM\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.25\\microsoft.aspnetcore.cryptography.keyderivation.3.1.25.nupkg.sha512",
     "C:\\Users\\DoloresM\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\3.1.24\\microsoft.aspnetcore.diagnostics.entityframeworkcore.3.1.24.nupkg.sha512",

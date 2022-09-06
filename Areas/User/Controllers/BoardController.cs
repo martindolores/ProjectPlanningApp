@@ -60,6 +60,8 @@ namespace ProjectPlanningApp.Areas.User.Controllers
         }
 
         //POST CreateList Action Method
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateBoardList(string id, string listName)
         {
             try
@@ -84,6 +86,13 @@ namespace ProjectPlanningApp.Areas.User.Controllers
             {
                 return NotFound();
             }
+        }
+
+        //POST CreateCard Action Method
+        public async Task<IActionResult> CreateCard(string id, string cardName)
+        {
+
+            return View("ViewBoard");
         }
     }
 }
