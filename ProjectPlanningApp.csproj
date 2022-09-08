@@ -12,6 +12,10 @@
     <Compile Remove="Data\Migrations\20220831231945_initWorkPC.Designer.cs" />
     <Compile Remove="Data\Migrations\20220901043215_updateListTable.cs" />
     <Compile Remove="Data\Migrations\20220901043215_updateListTable.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220907000241_add-migration updateCardModel.cs" />
+    <Compile Remove="Data\Migrations\20220907000241_add-migration updateCardModel.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220907000638_updateLabelandCardModel.cs" />
+    <Compile Remove="Data\Migrations\20220907000638_updateLabelandCardModel.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

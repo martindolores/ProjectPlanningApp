@@ -9,6 +9,10 @@ namespace ProjectPlanningApp.Areas.User.Models
 {
     public class BoardList
     {
+        public BoardList()
+        {
+            Cards = new List<Card>();
+        }
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }

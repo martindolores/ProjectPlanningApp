@@ -89,7 +89,7 @@ namespace ProjectPlanningApp.Areas.User.Controllers
         }
 
         //POST CreateCard Action Method
-        public async Task<IActionResult> CreateCard(string id, string cardName)
+        public async Task<IActionResult> CreateCard(string listId, string cardName)
         {
 
             return View("ViewBoard");
