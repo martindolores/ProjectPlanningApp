@@ -412,3 +412,5 @@ C:\Projects\ProjectPlanningApp\obj\Debug\netcoreapp3.1\ProjectPlanningApp.pdb
 C:\Projects\ProjectPlanningApp\obj\Debug\netcoreapp3.1\ProjectPlanningApp.genruntimeconfig.cache
 C:\Projects\ProjectPlanningApp\obj\Debug\netcoreapp3.1\ProjectPlanningApp.csproj.AssemblyReference.cache
 C:\Projects\ProjectPlanningApp\obj\Debug\netcoreapp3.1\Razor\Areas\User\Views\Board\ViewBoard.cshtml.g.cs
+D:\Projects\ProjectPlanningApp\obj\Debug\netcoreapp3.1\Razor\Areas\User\Views\Board\ViewBoard.cshtml.g.cs
+D:\Projects\ProjectPlanningApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EmptyLayout.cshtml.g.cs

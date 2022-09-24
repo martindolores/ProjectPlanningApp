@@ -4,42 +4,43 @@
 }
 
 <!--Heading-->
-<div class="p-5 mb-4 rounded-3">
-    <div class="container-fluid py-5 text-center">
-        <h1 class="display-4 font-weight-bold">Boards</h1>
-        <hr />
-        <!--Main-->
-        <div class="container p-5">
-            <div class="row">
-                <div class="col">
-                    <div class="h-100 p-5 text-light bg-dark rounded-4">
-                        <h2>Create Boards</h2>
-                        <hr class="text-light" />
-                        <p>
-                            Boards keep tasks structured and the process going ahead regardless of the project or procedure.
-                            You can view everything at a glance, from "To-Do" to "Done"!
-                        </p>
-                        <button class="btn btn-outline-light" type="button" data-toggle="modal" data-target="#exampleModalLong">
-                            Create a new Board!
-                        </button>
+<div style="padding-left: 50px;">
+    <div class="p-5 mb-4 rounded-3">
+        <div class="container-fluid py-5 text-center">
+            <h1 class="display-4 font-weight-bold">Boards</h1>
+            <hr />
+            <!--Main-->
+            <div class="container p-5">
+                <div class="row">
+                    <div class="col">
+                        <div class="h-100 p-5 text-light bg-dark rounded-4">
+                            <h2>Create Boards</h2>
+                            <hr class="text-light" />
+                            <p>
+                                Boards keep tasks structured and the process going ahead regardless of the project or procedure.
+                                You can view everything at a glance, from "To-Do" to "Done"!
+                            </p>
+                            <button class="btn btn-outline-light" type="button" data-toggle="modal" data-target="#exampleModalLong">
+                                Create a new Board!
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="h-100 p-5 bg-light border rounded-4">
-                        <h2>View Boards</h2>
-                        <hr class="text-dark" />
-                        <p>
-                            <br />
-                            Here, you can keep track of all the boards you have created!
-                        </p>
-                        <a class="btn btn-outline-secondary" asp-action="View">View Boards</a>
+                    <div class="col">
+                        <div class="h-100 p-5 bg-light border rounded-4">
+                            <h2>View Boards</h2>
+                            <hr class="text-dark" />
+                            <p>
+                                <br />
+                                Here, you can keep track of all the boards you have created!
+                            </p>
+                            <a class="btn btn-outline-secondary" asp-action="View">View Boards</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <!-- Modal -->
 <form method="post" asp-action="Create">
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">

@@ -16,6 +16,8 @@
     <Compile Remove="Data\Migrations\20220907000241_add-migration updateCardModel.Designer.cs" />
     <Compile Remove="Data\Migrations\20220907000638_updateLabelandCardModel.cs" />
     <Compile Remove="Data\Migrations\20220907000638_updateLabelandCardModel.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220908112245_CardName.cs" />
+    <Compile Remove="Data\Migrations\20220908112245_CardName.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -41,7 +42,7 @@ namespace ProjectPlanningApp.Areas.User.Controllers
             {
                 _db.Boards.Add(board);
                 await _db.SaveChangesAsync();
-                return View("ViewBoard", board);
+                return this.RedirectToAction("ViewBoard", "Board", new { id = board.Id });
             }
             else
             {
@@ -49,13 +50,14 @@ namespace ProjectPlanningApp.Areas.User.Controllers
                                        .Where(y => y.Count > 0)
                                        .ToList();
             }
-            return View(board);
+            return NotFound();
         }
 
         //GET ViewBoard Action Method
+        [HttpGet]
         public IActionResult ViewBoard(Board board)
         {
-            var boards = _db.Boards.Include(b => b.Lists).Where(b => b.Id == board.Id);
+            var boards = _db.Boards.Include(b => b.Lists).ThenInclude(c=>c.Cards).FirstOrDefault(b => b.Id == board.Id);
             return View(boards);
         }
 
@@ -66,19 +68,23 @@ namespace ProjectPlanningApp.Areas.User.Controllers
         {
             try
             {
-                if (id != null)
+                if (ModelState.IsValid)
                 {
-                    var boardId = Int32.Parse(id);
-                    var board = _db.Boards.Include(b=>b.Lists).FirstOrDefault(b => b.Id == boardId);
-                    var boardList = new BoardList()
+                    if (id != null)
                     {
-                        BoardId = boardId,
-                        Name = listName
-                    };
-                    board.Lists.Add(boardList);
-                    await _db.SaveChangesAsync();
-                    return View("ViewBoard", board);
-
+                        int boardId = int.Parse(id);
+                        Board board = _db.Boards.Include(b => b.Lists).FirstOrDefault(b => b.Id == boardId);
+                        BoardList boardList = new BoardList()
+                        {
+                            BoardId = boardId,
+                            Name = listName
+                        };
+                        board.Lists.Add(boardList);
+                        await _db.SaveChangesAsync();
+                        return this.RedirectToAction("ViewBoard", "Board", new { id = board.Id });
+                    }
+                    //If we get to any of this returns, something failed.
+                    return View("ViewBoard");
                 }
                 return View("ViewBoard");
             }
@@ -89,10 +95,34 @@ namespace ProjectPlanningApp.Areas.User.Controllers
         }
 
         //POST CreateCard Action Method
-        public async Task<IActionResult> CreateCard(string listId, string cardName)
+        public async Task<IActionResult> CreateCard(string listIdCard, string cardName, string cardColour)
         {
+            if (listIdCard != null || cardName != null)
+            {
+                if (ModelState.IsValid)
+                    try
+                    {
+                        int listId = int.Parse(listIdCard);
+                        BoardList list = _db.BoardLists.Include(l=>l.Cards).FirstOrDefault(l => l.Id == listId);
+                        Card card = new Card()
+                        {
+                            Name = cardName,
+                            CoverColour = cardColour
+                        };
+                        list.Cards.Add(card);
+                        Board board = _db.Boards.FirstOrDefault(b => b.Id == list.BoardId);
+                        await _db.SaveChangesAsync();
+                        return RedirectToAction("ViewBoard", "Board", new { id = board.Id });
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine("ERROR: " + ex);
+                        return View("ViewBoard");
+                    }
 
+            }
             return View("ViewBoard");
         }
+
     }
 }

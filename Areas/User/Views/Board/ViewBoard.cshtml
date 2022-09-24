@@ -4,7 +4,7 @@
 }
 
 <body style="background-color:@Model.BackgroundColour; height:100%">
-    <div class="container">
+    <div class="container" style="padding-left:100px">
         <div class="text-center">
             <br />
             <br />
@@ -40,8 +40,25 @@
                                     @list.Name <span class="ms-auto text-muted"><i class="fa-solid fa-ellipsis"></i></span>
                                 </div>
                                 <div class="card-body">
-                                    <input name="id" value="@Model.Id" type="hidden" />
-                                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                                    <input type="hidden" value="@list.Id" id="listId" />
+                                    @if (list.Cards.Count > 0)
+                                    {
+                                        foreach (var card in list.Cards)
+                                        {
+                                            <div class="card" style="margin: 10px;">
+                                                <div class="card-header d-flex justify-content-center" style="background-color: @card.CoverColour;">
+                                                    <!--Add Card Colour Style here-->
+                                                    <span class="ms-auto text-muted"><i class="fa-solid fa-ellipsis"></i></span>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div>
+                                                        @card.Name
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" id="addCard">
                                         <i class="fa-solid fa-plus"></i> Add a Card
                                     </button>
                                 </div>
@@ -79,14 +96,39 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input name="listId" type="hidden" />
-                    <input class="form-control" name="cardName"/>
+                    <input name="listIdCard" type="hidden" id="listIdCard" />
+                    <input class="form-control" name="cardName" />
+                    <div class="input-group">
+                        <input name="cardColour" type="text" class="form-control input-lg" id="colorHex" value="#000000" readonly="readonly" />
+                        <span class="input-group-append">
+                            <input type="color" class="form-control form-control-color input-group-text" id="colorChoice" />
+                        </span>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <input type="submit" class="btn btn-primary" value="Add Card">
                 </div>
             </div>
         </div>
     </div>
 </form>
+
+@section Scripts{
+    @{await Html.RenderPartialAsync(partialViewName: "_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+        $("#addCard").click(function () {
+            var listId = $("#listId").val();
+            $("#listIdCard").val(listId);
+            console.log($("#listId").val());
+        });
+    </script>
+    <script type="text/javascript">
+        $("#colorChoice").change(function () {
+            var color = $("#colorChoice").val();
+            $("#colorHex").val(color);
+            console.log($("#colorHex").val());
+        });
+    </script>
+}
